@@ -2,17 +2,17 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from uuid import UUID
-from events.db_connection import get_db
+from fastevents.db_connection import get_db
 
-from events.models import Event
-from events.schemas.models import (
+from fastevents.models import Event
+from fastevents.schemas.models import (
     EventCreate,
     EventDelete,
     EventRead,
     EventUpdate,
 )
 
-from events.utils.event_crud import (
+from fastevents.utils.event_crud import (
     event_get_all,
     event_get_one,
     event_update,

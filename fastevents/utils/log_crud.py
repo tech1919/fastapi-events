@@ -2,11 +2,11 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from uuid import UUID
-from events.db_connection import get_db
+from fastevents.db_connection import get_db
 from datetime import datetime
 
-from events.models import Log
-from events.schemas.models import (
+from fastevents.models import Log
+from fastevents.schemas.models import (
     LogCreate,
     LogRead,
     LogUpdate,    

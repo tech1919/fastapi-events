@@ -1,6 +1,6 @@
 from fastapi import APIRouter , Depends
 
-from events.routes import (
+from fastevents.routes import (
     events,
     logs,
 )

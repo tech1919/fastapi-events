@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 VERSION = '0.0.1' 
-DESCRIPTION = 'FastAPI Events System'
+DESCRIPTION = 'FastEvents - FastAPI Events System'
 
 try:
     # read the contents of README file
@@ -13,7 +13,7 @@ except:
 
 # Setting up
 setup(
-        name="ofry-fasatpi-events", 
+        name="fastevents", 
         version=VERSION,
         author="Ofry Makdasy",
         author_email="ofry.makdsy@tech-19.com",
