@@ -28,7 +28,7 @@ def get_all(
     return log_get_all(db=db)
 
 
-@router.post("/create-log" , status_code=status.HTTP_201_OK)
+@router.post("/create-log" , status_code=status.HTTP_201_CREATED)
 def create_one(
     record : LogCreate,
     db : Session = Depends(get_db),
