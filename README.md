@@ -1,6 +1,6 @@
 # FastEvents - FastAPI Events System
 
-This package is a ready to use user authentication and autorization managment system, Using FastAPI, PostgreSQL, and AWS Cognito JWT based authentication.
+This package is a ready to use event syste, Using FastAPI, PostgreSQL.
 > ## Install Package
 
 ```
@@ -12,7 +12,7 @@ pip install "git+https://github.com/tech1919/fastapi-events.git"
 
 Configure `.env` file:
 ```
-USERS_DATABASE_URL=postgres://username:password@host:port/database_name
+EVENT_DATABASE_URL=postgres://username:password@host:port/database_name
 ```
 
 > ## Add the router to your FastAPI app
