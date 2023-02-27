@@ -13,16 +13,39 @@ class BaseDelete:
 # Events               #
 ########################
 
+class S3File(BaseModel):
+
+    file_ext : str
+    s3_uri : str
+
+class Attachments(BaseModel):
+
+    files : List[S3File]
 
 class EventCreate(BaseModel):
-    event_src : str 
+    event_src : str
+    event_type : str
+    event_subtype : Optional[str] = None
     name : str
-    content : dict
+    content : str
+    severity : str
+    creation_date : datetime
+    modify_date : datetime
+    attachments : Attachments
+    parent_event_id : Optional[UUID] = None
 
 class EventUpdate(BaseModel):
-    id : UUID
-    name : str 
-    content : dict
+
+    event_src : Optional[str] = None
+    event_type : Optional[str] = None
+    event_subtype : Optional[str] = None
+    name : Optional[str] = None
+    content : Optional[str] = None
+    severity : Optional[str] = None
+    modify_date : Optional[datetime] = None
+    attachments : Optional[Attachments] = None
+    parent_event_id : Optional[UUID] = None
+
 
 class EventDelete(BaseModel , BaseDelete):
     pass

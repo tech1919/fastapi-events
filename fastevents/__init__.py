@@ -6,3 +6,6 @@ from fastevents.routes import (
     events,
     logs,
 )
+
+from fastevents.env_settings import *
+from fastevents import env_settings

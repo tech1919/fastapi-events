@@ -14,10 +14,15 @@ class Event(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True , default = uuid.uuid4)
     event_src = Column(String , nullable = False)
+    event_type = Column(String , nullable = False)
+    event_subtype = Column(String , nullable = True)
     name = Column(String(100) , nullable=False)
-    content = Column(JSON , nullable=False)
+    content = Column(String , nullable=False)
+    severity = Column(String(50) , nullable = True)
     creation_date = Column(DateTime , default = datetime.now())
     modify_date = Column(DateTime , default = datetime.now())
+    attachments = Column(JSON , nullable = True)
+    parent_event_id = Column(UUID(as_uuid=True) , ForeignKey("events.id") ,nullable = True)
 
 
 class Log(Base):
